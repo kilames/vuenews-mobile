@@ -20,25 +20,69 @@
     <van-tabs
       v-model="active"
       class='homepage-tabs'
+      animated
+      swipeable
+      color="#466DE2"
+      title-active-color='#466DE2'
+      background='#f4f5f6'
     >
-      <van-tab title="标签 1">内容 1</van-tab>
-      <van-tab title="标签 2">内容 2</van-tab>
-      <van-tab title="标签 3">内容 3</van-tab>
-      <van-tab title="标签 4">内容 4</van-tab>
+      <van-tab
+        :key='channel.id'
+        v-for="channel in channels"
+        :title="channel.message"
+      >
+        <article-list channel='channel' />
+      </van-tab>
+
     </van-tabs>
 
   </div>
 </template>
 
 <script>
+// import { getUserChannels } from '@/api/user'
+import ArticleList from './components/articleList'
+
 export default {
-  name: '',
-  components: {},
+  name: 'HomeIndex',
+  components: {
+    ArticleList
+  },
   props: {},
   data () {
     return {
       active: 0,
+      channels: [
+        {
+          id: 0,
+          message: '头条'
+        },
+        {
+          id: 1,
+          message: '社会'
+        }
+        , {
+          id: 2,
+          message: '国内'
+        },
+        {
+          id: 3,
+          message: '国际'
+        },
+        {
+          id: 4,
+          message: '娱乐'
+        },
+        {
+          id: 5,
+          message: '体育'
+        },
+        {
+          id: 6,
+          message: '科技'
+        }]
     }
+
   },
   computed: {},
   watch: {},
@@ -65,8 +109,10 @@ button {
     font-size: 26px;
   }
 }
-
-.homepage-tabs .van-tab {
-  background-color: #f4f5f6;
+/deep/.homepage-tabs {
+  .van-tab {
+    height: 46px;
+    min-width: 80px;
+  }
 }
 </style>
