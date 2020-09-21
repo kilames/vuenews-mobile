@@ -1,7 +1,10 @@
 <template>
   <div class='container'>
     <!-- 顶部header -->
-    <van-nav-bar class='homepage'>
+    <van-nav-bar
+      class='homepage'
+      fixed
+    >
       <van-button
         class='homepage-logo'
         slot='title'
@@ -25,13 +28,14 @@
       color="#466DE2"
       title-active-color='#466DE2'
       background='#f4f5f6'
+      fixed
     >
       <van-tab
         :key='channel.id'
         v-for="channel in channels"
         :title="channel.message"
       >
-        <article-list channel='channel' />
+        <article-list :channel='channel' />
       </van-tab>
 
     </van-tabs>
@@ -93,6 +97,9 @@ export default {
 </script>
 
 <style scoped lang='less'>
+.container {
+  padding-top: 92px;
+}
 button {
   border: none;
 }
@@ -113,6 +120,14 @@ button {
   .van-tab {
     height: 46px;
     min-width: 80px;
+  }
+
+  .van-tabs__wrap {
+    position: fixed;
+    top: 46px;
+    z-index: 2;
+    left: 0;
+    right: 0;
   }
 }
 </style>
