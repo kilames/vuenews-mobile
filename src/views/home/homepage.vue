@@ -47,15 +47,13 @@
 </template>
 
 <script>
-// import { getUserChannels } from '@/api/user'
 import ArticleList from './components/articleList'
-// import SearchBtn from './components/searchbtn'
+
 
 export default {
   name: 'HomeIndex',
   components: {
     ArticleList
-    // SearchBtn
   },
   props: {},
   data () {
@@ -96,11 +94,7 @@ export default {
   watch: {},
   created () { },
   mounted () { },
-  methods: {
-    showPopup () {
-      this.show = !this.show
-    }
-  }
+  methods: {}
 }
 </script>
 

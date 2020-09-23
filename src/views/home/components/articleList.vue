@@ -17,11 +17,6 @@
           :key="index"
           :article="article"
         />
-        <!-- <van-cell
-          v-for="(article, index) in list"
-          :key="index"
-          :title="article.title"
-        /> -->
       </van-list>
     </van-pull-refresh>
   </div>
@@ -61,7 +56,6 @@ export default {
         const { data } = await getArticles({
           id: this.channel.id,
         })
-        console.log(data)
         this.list.push(...data)
         this.loading = false
 
