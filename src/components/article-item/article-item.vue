@@ -61,7 +61,7 @@ export default {
     padding: 0 7px 0 7px;
     .van-image {
       width: 150px;
-      margin: 0 7px 0px 7px;
+      margin: 0 7px 3px 7px;
     }
     .message {
       color: #bfbfbf;

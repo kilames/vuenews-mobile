@@ -14,7 +14,10 @@
       <van-button slot='left'>
         <i class='iconfont newsemail'></i>
       </van-button>
-      <van-button slot='right'>
+      <van-button
+        slot='right'
+        to="/search"
+      >
         <i class='iconfont newssearch'></i>
       </van-button>
     </van-nav-bar>
@@ -46,11 +49,13 @@
 <script>
 // import { getUserChannels } from '@/api/user'
 import ArticleList from './components/articleList'
+// import SearchBtn from './components/searchbtn'
 
 export default {
   name: 'HomeIndex',
   components: {
     ArticleList
+    // SearchBtn
   },
   props: {},
   data () {
@@ -86,13 +91,16 @@ export default {
           message: '科技'
         }]
     }
-
   },
   computed: {},
   watch: {},
   created () { },
   mounted () { },
-  methods: {}
+  methods: {
+    showPopup () {
+      this.show = !this.show
+    }
+  }
 }
 </script>
 
@@ -125,7 +133,6 @@ button {
   .van-tabs__wrap {
     position: fixed;
     top: 46px;
-    z-index: 2;
     left: 0;
     right: 0;
   }

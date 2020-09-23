@@ -8,6 +8,11 @@ const routes = [{
     name: 'homepage',
     component: () =>
         import ('../views/home/homepage.vue')
+}, {
+    path: '/search',
+    name: 'searchpage',
+    component: () =>
+        import ('../views/home/components/searchbtn')
 }]
 
 const router = new VueRouter({
